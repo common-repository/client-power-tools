@@ -1,0 +1,120 @@
+.client-dashboard {
+  .page-header {
+    margin-bottom: $spacing-xs;
+  }
+
+  .entry-title:not(.cpt-entry-title) {
+    font-size: inherit;
+    font-weight: bold;
+  }
+}
+
+body:not(.cpt-theme) {
+  :where(#cpt-nav) {
+    background-color: $gray-wash;
+    margin-top: $spacing-xs;
+    margin-bottom: $spacing-sm;
+    padding-top: $spacing-xxs;
+    padding-bottom: $spacing-xxs;
+    
+    .menu {
+      display: flex;
+      gap: $spacing-xxs $spacing-xs;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0 auto;
+      padding: 0;
+  
+      @media (max-width: $breakpoint-sm) {
+        flex-direction: column;
+      }
+  
+      .menu-item {
+        a {
+          &:not(:hover) {
+            text-decoration: none;
+          }
+  
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+  
+      > .menu-item-has-children {
+        align-items: center;
+        display: flex;
+        gap: .15em;
+        position: relative;
+  
+        &::after {
+          content: '\0002B'; // "+"
+          display: inline-grid;
+          height: .9em;
+          place-content: center;
+          width: .9em;
+        }
+  
+        &:hover,
+        &:focus {
+          cursor: pointer;
+  
+          > .sub-menu {
+            display: block;
+          }
+  
+          &::after {
+            content: '\2212'; // "-"
+          }
+        }
+  
+        > .sub-menu {
+          animation: growDown_centered 150ms ease-in-out forwards;
+          background-color: White;
+          border: $border;
+          box-shadow: $box-shadow;
+          display: none;
+          list-style: none;
+          max-width: 24ch;
+          padding: $spacing-xs;
+          position: absolute;
+            top: 100%;
+            left: 50%;
+          transform: translateX(-50%);
+          transform-origin: top;
+          width: max-content;
+          z-index: 10;
+  
+          @media (max-width: $breakpoint-sm) {
+            max-width: calc(100vw - ($spacing-xs * 2));
+            width: calc(100vw - ($spacing-xs * 2));
+          }
+        }
+      }
+    }
+  
+    .sub-menu {
+      list-style: none;
+  
+      > .menu-item {
+        &:first-child {
+          margin-top: 0;
+        }
+  
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+  
+      .menu-item {
+        margin: $spacing-xxs 0;
+      }
+    }
+  }
+}
+
+#cpt-breadcrumbs {
+  font-size: 80%;
+  margin-bottom: $spacing-sm;
+}

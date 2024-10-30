@@ -1,0 +1,33 @@
+// Colors
+$light-text: SlateGray;
+
+$success: SeaGreen;
+$error: Red;
+
+$yellow-highlighter: rgba(255, 255, 0, .5);
+$blue-highlighter: rgba(135, 206, 250, .2);
+$gray-wash: rgba(0, 0, 0, .1);
+$black-wash: rgba(255, 255, 255, 0.5);
+
+$border: 1px solid LightSlateGray;
+$box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+
+// Line Height
+$line-height-sm: 1.15;
+$line-height-normal: 1.5;
+
+// Spacing
+$spacing-tiny: calc(.5 * .4444rem); 
+$spacing-tiny: .4444rem;
+$spacing-xxs: .6667rem;
+$spacing-xs: 1rem;
+$spacing-sm: 1.5rem;
+$spacing-md: 2.25rem;
+$spacing-lg: 3.375rem;
+$spacing-xl: 5.0625rem;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
